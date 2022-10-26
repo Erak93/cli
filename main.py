@@ -14,7 +14,8 @@ print()
 print("Hi", username, ".", "Please select one of the following operations: ")
 
 
-operation= input("Type 1 for LIST ITEMS BY WAREHOUSE, 2 for SEARCH AN ITEM AND PLACE AN ORDER or 3 to terminate the program:")
+print("Type 1 for LIST ITEMS BY WAREHOUSE","Type 2 for SEARCH AN ITEM AND PLACE AN ORDER", "Type 3 to terminate the program",sep='\n')
+operation= input("Type desired operation")
 
 if operation=="1":
     print()
@@ -31,6 +32,11 @@ elif operation=="2":
     print("item count=",warehouse1.count(item_name))
     print("In warehouse 2: ")
     print("item count=",warehouse2.count(item_name))
+    if (warehouse1.count(item_name)+warehouse2.count(item_name))==0:
+        print("Item not found")
+        breakpoint
+    else:
+        print("ok you selected",item_name)
     order_decision=input("Do you want to order the item? YES or NO? ")
     
     if order_decision=="YES":
@@ -38,9 +44,9 @@ elif operation=="2":
         if order_amount <=(warehouse1.count(item_name)+warehouse2.count(item_name)):
             print(order_amount,item_name,"ordered")
         elif order_amount >(warehouse1.count(item_name)+warehouse2.count(item_name)):    
-            supplemental_order=input("Not enough items in warehouse.Do you want to order the maximum availability instead? YES or NO")
+            supplemental_order=input("Not enough items in warehouse.Do you want to order the maximum availability instead? YES or NO: ")
             if supplemental_order=="YES":
-                print(warehouse1.count(item_name)+warehouse2.count(item_name),"items ordered")
+                print(warehouse1.count(item_name)+warehouse2.count(item_name),item_name,"ordered")
             else:
                 print("Program terminated")
     elif order_decision=="NO":
