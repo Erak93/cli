@@ -8,11 +8,11 @@ username = input("Please enter your username: ")
 
 print()
 
-print("Hi", username,",", "Please select one of the following operations: ")
+print("Hi", username,",", "please select one of the following operations: ")
 
 
-print("Type 1 for LIST ITEMS BY WAREHOUSE","Type 2 for SEARCH AN ITEM AND PLACE AN ORDER", "Type 3 to terminate the program",sep='\n')
-operation= input("Type desired operation")
+print("Type 1 for LIST ITEMS BY WAREHOUSE","Type 2 for SEARCH AN ITEM AND PLACE AN ORDER", "Type 3 to TERMINATE THE PROGRAM",sep='\n')
+operation= input("Type desired operation: ")
 
 if operation=="1":
     print()
@@ -30,7 +30,7 @@ elif operation=="2":
     print("In warehouse 2: ")
     print("item count=",warehouse2.count(item_name))
     if (warehouse1.count(item_name)+warehouse2.count(item_name))>=1:
-        print("Okay, you selected",item_name)
+        print("Okay, you selected: ",item_name)
         
         order_decision=input("Do you want to order the item? YES or NO? ")
     
