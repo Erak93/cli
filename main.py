@@ -29,6 +29,7 @@ elif operation=="2":
     res2=[i for i in warehouse2 if subs in i]
     if res or res2:
         print ("Here is your search match",*res , sep="\n")
+        print (*res2, sep="\n")
        
         item_name=str.capitalize(input("Please pick an item: "))
         print("In warehouse 1:")       
